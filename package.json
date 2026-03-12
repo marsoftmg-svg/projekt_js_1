@@ -1,0 +1,23 @@
+{
+  "name": "projekt1",
+  "version": "1.0.0",
+  "description": "pierwszy projekt",
+  "license": "ISC",
+  "author": "banka",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.5",
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.0.3",
+    "globals": "^17.4.0",
+    "typescript-eslint": "^8.57.0"
+  }
+}
