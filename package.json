@@ -1,23 +1,38 @@
 {
-  "name": "projekt1",
+  "name": "react",
   "version": "1.0.0",
-  "description": "pierwszy projekt",
+  "description": "opis",
   "license": "ISC",
   "author": "marcin",
   "type": "module",
-  "main": "index.js",
+  "main": "test.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint ."
+
+    "lint": "eslint src/ --fix",
+
+    "build": "babel src/ --out-dir dist/",
+
+    "minify": "terser dist/index.js -o dist/index.min.js --compress --mangle --source-map",
+
+    "clean": "rm -rf dist/",
+
+    "release": "npm run clean && npm run lint && npm run build && npm run minify",
+
+    "dev": "babel src/ --out-dir dist/ --watch",
+
+    "deploy": "gh-pages -d dist",
+
+    "deploy:prod": "rsync -avz --delete dist/ user@serwer.pl:/var/www/app/"
+
   },
   "dependencies": {
+    "@eslint/eslintrc": "^3.3.5",
+    "react": "^19.2.4",
     "typescript": "^5.9.3"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3.3.5",
     "@eslint/js": "^10.0.1",
     "eslint": "^10.0.3",
-    "globals": "^17.4.0",
-    "typescript-eslint": "^8.57.0"
+    "globals": "^17.4.0"
   }
 }
